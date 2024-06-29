@@ -36,6 +36,3 @@ CKworker es una extensión de navegador que permite la integración de Twitch co
 
 ¡Las contribuciones son bienvenidas! Siéntete libre de abrir un issue o enviar un pull request.
 
-## Licencia
-
-Este proyecto está licenciado bajo la Licencia MIT.
