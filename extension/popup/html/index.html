@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CKworker</title>
+    <script src="../js/popup.js"></script>
+    <style>
+      body {
+        width: 320px; /* Ancho fijo */
+        height: 260px; /* Alto fijo */
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .toggle-container {
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 50px; /* Ajustar el ancho del interruptor */
+        height: 25px; /* Ajustar la altura del interruptor */
+        margin-right: 10px; /* Espacio entre el interruptor y la leyenda */
+      }
+      .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: .4s;
+        border-radius: 25px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 21px; /* Ajustar el tamaño del círculo */
+        width: 21px; /* Ajustar el tamaño del círculo */
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        transition: .4s;
+        border-radius: 50%;
+      }
+      input:checked + .slider {
+        background-color: #2196F3;
+      }
+      input:checked + .slider:before {
+        transform: translateX(25px); /* Ajustar la traslación para el tamaño ajustado */
+      }
+      #currentUrl {
+        margin-top: 20px;
+        word-break: break-all;
+        height: 40px; /* Altura fija */
+        overflow: hidden;
+      }
+      #currentUrl.hidden {
+        visibility: hidden;
+      }
+      #forceSend {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Click the button to Force update</p>
+    <div class="toggle-container">
+      <label class="toggle-switch">
+        <input type="checkbox" id="toggleButton">
+        <span class="slider"></span>
+      </label>
+      <span>Show/Hide URL</span>
+    </div>
+    <p id="currentUrl" class="hidden"></p>
+    <button id="forceSend">Send</button>
+  </body>
+</html>
